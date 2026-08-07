@@ -29,7 +29,7 @@ docs/token-log.md                # seed nhật ký token
 2. Copy toàn bộ file trong kit vào gốc repo (giữ nguyên cấu trúc thư mục).
 3. **Viết `docs/product-brief.md`** theo đề tài team chọn (đã có sẵn bản Kanban mẫu).
 4. Cài Copilot CLI: `npm install -g @github/copilot` → chạy `copilot` trong repo.
-5. Gõ **"bắt đầu"** (hoặc dán `prompts/run-workshop.md`). Agent tự dẫn từ stage 1.
+5. Gõ **"start"** (hoặc dán `prompts/run-workshop.md`). Agent tự dẫn từ stage 1.
 6. `git commit` sau mỗi artifact — như agent nhắc.
 
 ## Ăn điểm

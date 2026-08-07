@@ -7,7 +7,7 @@
 #harness base awesome-agents; policy "reference not copy" !must.
 #harness topic-agnostic true; scope-source #brief !must.
 
-// --- project (READ from brief, never hardcoded here) ---
+// --- project (read from brief, never hardcoded here) ---
 #proj a software-app; run local !must; demo-in "5min" !must.
 #proj mvp source #brief; mvp-max 3 !strictly.
 #proj tech source #brief; storage source #brief; backend source #brief.
@@ -23,20 +23,20 @@
 #tokenlog = "docs/token-log.md".
 #kb = "docs/knowledge/".
 #code = "src/".
-#any-artifact loc repo !must.
-[#any-artifact loc chat] mark forbidden.
+#any-artifact location repo !must.
+[#any-artifact location chat] mark forbidden.
 
-// --- facilitator protocol (the "dẫn dắt") ---
-#trigger a phrase; member <"bắt đầu" "start" "next" "tiếp">.
+// --- facilitator protocol (the guidance loop) ---
+#trigger a phrase; member <"start" "next" "continue">.
 {?u say #trigger} => {#harness run #protocol}.
 #protocol a procedure; step <#p1 #p2 #p3 #p4 #p5>.
-#p1 do detect-stage; how "inspect which artifacts already exist".
-#p2 do announce; obj <current-stage role-lens next-artifact>.
-#p3 do switch-role-agent; per current-stage.
-#p4 do produce next-artifact; then mob-review !must.
-#p5 do remind; obj <commit token-log-line "gõ next">.
+#p1 action detect-stage; how "inspect which artifacts already exist".
+#p2 action announce; report <current-stage role-lens next-artifact>.
+#p3 action switch-role-agent; per current-stage.
+#p4 action produce next-artifact; then mob-review !must.
+#p5 action remind; items <commit token-log-line request-next>.
 
-// --- stages (ordered, generic) ---
+// --- stages (ordered) ---
 #flow a sequence; order <#st1 #st2 #st3 #st4 #st5 #st6>.
 #st1 a stage; name requirements; lead #ba; out #stories.
 #st2 a stage; name design; lead #dev; out #design.
@@ -72,4 +72,4 @@
 #test a agent; file "agents/test.agent.md"; role Test.
 
 // --- session default ---
-{session open; ?u say nothing} => {#harness greet; ask "team bắt đầu?"}.
+{session open; ?u say nothing} => {#harness greet; ask "Shall we start?"}.
