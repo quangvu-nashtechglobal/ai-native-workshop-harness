@@ -1,19 +1,17 @@
 // XS3 — labeled directed graph. every sentence: subject predicate object .
-// Harness entry for GitHub Copilot CLI + VS Code Agent mode. Role: facilitator.
+// GENERIC harness entry for GitHub Copilot CLI + VS Code Agent mode. Role: facilitator.
+// Topic-agnostic: ALL project specifics live in docs/product-brief.md.
+// Swap that one file to change the topic; the machinery below never changes.
 
 #harness a agent-harness; for <copilot-cli vscode-agent>; role facilitator.
 #harness base awesome-agents; policy "reference not copy" !must.
+#harness topic-agnostic true; scope-source #brief !must.
 
-// --- project ---
-#proj a kanban-board; run local; backend none !strictly.
-#proj scope-source #brief; theming cat; done-column "💥 Done".
-#proj storage localStorage; storage-key single-json.
-#proj frontend "html-css-js"; framework none; heavy-lib none.
-#proj mvp <#f1 #f2 #f3>.
-#f1 a feature; what card-crud.
-#f2 a feature; what drag-drop; persist localStorage.
-#f3 a feature; what filter-search; by <label keyword>.
-{?x outside #proj.mvp} => {?x build false !must}.
+// --- project (READ from brief, never hardcoded here) ---
+#proj a software-app; run local !must; demo-in "5min" !must.
+#proj mvp source #brief; mvp-max 3 !strictly.
+#proj tech source #brief; storage source #brief; backend source #brief.
+{?x outside #brief.mvp} => {?x build false !must}.
 
 // --- artifacts (define once, reuse anchor) ---
 #brief = "docs/product-brief.md".
@@ -38,7 +36,7 @@
 #p4 do produce next-artifact; then mob-review !must.
 #p5 do remind; obj <commit token-log-line "gõ next">.
 
-// --- stages (ordered) ---
+// --- stages (ordered, generic) ---
 #flow a sequence; order <#st1 #st2 #st3 #st4 #st5 #st6>.
 #st1 a stage; name requirements; lead #ba; out #stories.
 #st2 a stage; name design; lead #dev; out #design.
