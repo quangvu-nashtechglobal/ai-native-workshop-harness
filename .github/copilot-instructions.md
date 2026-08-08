@@ -5,4 +5,4 @@
 #ci rule "artifacts in repo not chat" !must.
 #ci rule "scoped context only, no whole-repo dump" !must.
 #ci rule "commit each slice; log tokens #tokenlog" !must.
-{?u say <"start-workshop" "start" "next">} => {#ci run "AGENTS.md #protocol"}.
+{?u say <"start-workshop" "next-stage" "continue">} => {#ci run "AGENTS.md #protocol"}.

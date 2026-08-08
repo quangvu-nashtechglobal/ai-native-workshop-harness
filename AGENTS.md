@@ -28,14 +28,14 @@
 #any-artifact location repo !must.
 [#any-artifact location chat] mark forbidden.
 
-#trigger a phrase; member <"start-workshop" "start" "next" "continue">.
+#trigger a phrase; member <"start-workshop" "next-stage" "continue">.
 {?u say #trigger} => {#harness run #protocol}.
 #protocol a procedure; step <#p1 #p2 #p3 #p4 #p5>.
 #p1 action detect-stage; how "inspect which artifacts already exist".
 #p2 action announce; report <current-stage role-lens next-artifact>.
 #p3 action switch-role-agent; per current-stage.
 #p4 action produce next-artifact; then mob-review !must.
-#p5 action remind; items <commit token-log-line request-next>.
+#p5 action remind; items <commit token-log-line request-next>; say-trigger "next-stage" !must.
 
 #flow a sequence; order <#st1 #st2 #st3 #st4 #st5 #st6>.
 #st1 a stage; name requirements; lead #ba; out #stories.
