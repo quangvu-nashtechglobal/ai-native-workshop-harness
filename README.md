@@ -29,8 +29,8 @@ docs/token-log.md                # seed nhật ký token
 2. Clone repo, mở bằng **VS Code** (Copilot Agent mode) — hoặc CLI: `npm install -g @github/copilot` → `copilot`.
 3. Khởi động harness:
    - **VS Code:** gõ **`/start-workshop`** trong ô Copilot Chat (prompt file `.github/prompts/`).
-   - **CLI:** `copilot` trong repo → gõ **`start`** (nó tự đọc `AGENTS.md`). Tiện hơn: chạy
-     `./start-workshop.ps1` = mở copilot + tự gõ `start`. CLI không có slash `/tên` tùy biến.
+   - **CLI:** `copilot` trong repo → gõ **`start-workshop`** (nó tự đọc `AGENTS.md`). Tiện hơn:
+     chạy `./start-workshop.ps1` = mở copilot + tự gõ luôn. CLI không có slash `/tên` tùy biến.
 4. **Brief chưa điền?** Agent tự chạy **intake**: phỏng vấn team từng câu (đề tài, người dùng,
    3 feature MVP, tech, tiêu chí thành công, out-of-scope) rồi ghi thẳng `docs/product-brief.md`.
    → Không cần soạn brief trước, cứ trả lời là xong.

@@ -28,7 +28,7 @@
 #any-artifact location repo !must.
 [#any-artifact location chat] mark forbidden.
 
-#trigger a phrase; member <"start" "next" "continue">.
+#trigger a phrase; member <"start-workshop" "start" "next" "continue">.
 {?u say #trigger} => {#harness run #protocol}.
 #protocol a procedure; step <#p1 #p2 #p3 #p4 #p5>.
 #p1 action detect-stage; how "inspect which artifacts already exist".
