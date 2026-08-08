@@ -24,13 +24,17 @@ docs/product-brief.md            # ← LỚP ĐỀ TÀI: sửa file này để �
 docs/token-log.md                # seed nhật ký token
 ```
 
-## Cài (đầu ngày, ~3 phút)
-1. Tạo repo dự án cho team (hoặc "Use this template" nếu repo này bật template).
-2. Copy toàn bộ file trong kit vào gốc repo (giữ nguyên cấu trúc thư mục).
-3. **Viết `docs/product-brief.md`** theo đề tài team chọn (đã có sẵn bản Kanban mẫu).
-4. Cài Copilot CLI: `npm install -g @github/copilot` → chạy `copilot` trong repo.
-5. Gõ **"start"** (hoặc dán `prompts/run-workshop.md`). Agent tự dẫn từ stage 1.
+## Cài (đầu ngày, ~2 phút)
+1. Bấm **"Use this template"** trên GitHub → tạo repo dự án (đã có sẵn toàn bộ kit ở gốc).
+2. Cài Copilot CLI: `npm install -g @github/copilot` → clone repo → chạy `copilot` trong repo.
+3. Gõ **"start"** (hoặc dán `prompts/run-workshop.md`).
+4. **Brief chưa điền?** Agent tự chạy **intake**: phỏng vấn team từng câu (đề tài, người dùng,
+   3 feature MVP, tech, tiêu chí thành công, out-of-scope) rồi ghi thẳng `docs/product-brief.md`.
+   → Không cần soạn brief trước, cứ trả lời là xong.
+5. Xong intake → agent dẫn tiếp từ stage 1 (requirements → design → build → test → demo).
 6. `git commit` sau mỗi artifact — như agent nhắc.
+
+> Muốn nhanh hơn: điền sẵn `docs/product-brief.md` trước ngày thi → agent bỏ qua intake, vào việc luôn.
 
 ## Ăn điểm
 - Trong demo, chỉ ra **file agent XS3 thật** + nói "story do BA agent sinh, test do Test agent".

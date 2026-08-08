@@ -13,6 +13,16 @@
 #proj tech source #brief; storage source #brief; backend source #brief.
 {?x outside #brief.mvp} => {?x build false !must}.
 
+// --- brief intake (stage 0: fill the topic layer before anything else) ---
+#brief may incomplete; requires <problem target-users mvp-3 tech-stack success-criteria out-of-scope>.
+#brief incomplete-if "any required field missing or placeholder".
+{#brief incomplete} => {#harness run #intake before #protocol !must}.
+#intake a procedure; lead #ba; step <#i1 #i2 #i3>.
+#i1 action interview; ask #brief.requires one-at-a-time !must; ¬assume ¬invent.
+#i2 action write #brief; then mob-confirm !must.
+#i3 action stop; then wait #trigger.
+{#brief complete} => {#harness run #protocol}.
+
 // --- artifacts (define once, reuse anchor) ---
 #brief = "docs/product-brief.md".
 #stories = "docs/requirements/user-stories.md".
