@@ -1,5 +1,3 @@
-// XS3 — Test (QC) role agent (topic-agnostic).
-
 #test a agent; role Test; active-at test-pass; also parallel build.
 #test out <#teststrat #testcases>.
 #testcases each ref "verifies US-xx" !must.

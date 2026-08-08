@@ -1,5 +1,3 @@
-// XS3 — Developer role agent (topic-agnostic; tech from product-brief).
-
 #dev a agent; role Developer; active-at <design task-breakdown build>.
 #dev out-design #design; covers <components decisions data-flow>; derive-from #brief.
 #dev out-tasks #devspec; map-to US-xx.

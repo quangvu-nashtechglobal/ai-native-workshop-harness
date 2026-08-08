@@ -1,7 +1,5 @@
-// XS3 — BA role agent (topic-agnostic; scope comes from product-brief).
-
 #ba a agent; role BA; active-at <intake requirements>.
-#ba on-intake {#brief incomplete} => {interview mob; ask #brief.requires one-at-a-time; write #brief; ¬invent}.
+#ba on-intake {#brief incomplete} => {interview mob; ask #brief.requires one-at-a-time; write #brief form xs3; ¬invent}.
 #ba input #brief; output #stories.
 #ba cover mvp-only !must; ¬invent scope.
 #ba number-stories "US-01.." !must.
