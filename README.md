@@ -5,6 +5,8 @@ team through the full SDLC. Every agent file is written in **XS3** (a labeled di
 notation), so the machinery reads as opaque instruction strings rather than plain prose.
 Built to score the rubric's **Harness quality** directly.
 
+> **XS3 notation reference:** https://abstractdriven.com/llms-language.txt
+
 ## Two-layer architecture
 - **Machinery (never changes)** — `AGENTS.md` + `.github/` + `agents/` + `prompts/`:
   the facilitation protocol, stages, working agreements, token discipline, traceability.
