@@ -8,11 +8,11 @@ Built to score the rubric's **Harness quality** directly.
 > **XS3 notation reference:** https://abstractdriven.com/llms-language.txt
 
 ## Two-layer architecture
-- **Machinery (never changes)** — `AGENTS.md` + `.github/` + `agents/` + `prompts/`:
+- **Machinery (never changes)** — `AGENTS.md` + `.github/` (incl. `.github/agents/`) + `prompts/`:
   the facilitation protocol, stages, working agreements, token discipline, traceability.
   Contains **no project specifics**.
 - **Topic layer (swap to change the product)** — `docs/product-brief.md` + `docs/knowledge/`
-  + `skills/`: the scope, features, tech stack, screen spec, and tech skills of what you're
+  + `.github/skills/`: the scope, features, tech stack, screen spec, and tech skills of what you're
   building. **Currently pre-filled with the Cyber-Nexus Kanban topic** (distilled from a
   verified reference build), so intake is skipped and the harness goes straight to stage 1.
   To change topic: empty the brief back to placeholders and swap the knowledge/skills files.
@@ -22,13 +22,13 @@ Built to score the rubric's **Harness quality** directly.
 AGENTS.md                        # XS3 brain: rules + facilitation protocol (Copilot CLI reads this)
 .github/copilot-instructions.md  # thin XS3 layer for VS Code Agent mode; defers to AGENTS.md
 .github/prompts/start-workshop.prompt.md  # VS Code slash command: /start-workshop
-agents/ba.agent.md               # BA persona  → user stories (+ leads brief intake)
-agents/developer.agent.md        # Dev persona → architecture, dev-spec, code
-agents/test.agent.md             # QC persona  → test strategy/cases + token-log scribe
+.github/agents/ba.agent.md       # BA persona  → user stories (+ leads brief intake)
+.github/agents/developer.agent.md # Dev persona → architecture, dev-spec, code
+.github/agents/test.agent.md     # QC persona  → test strategy/cases + token-log scribe
+.github/skills/                  # ← TOPIC LAYER: narrow skills w/ triggers
+                                 #   (tailwind-v4-theme, dnd-kit, vitest-pure-logic)
 prompts/run-workshop.md          # paste-in kickoff prompt (fallback)
 start-workshop.ps1               # CLI launcher: opens Copilot and fires the trigger
-skills/                          # ← TOPIC LAYER: narrow skills w/ triggers
-                                 #   (tailwind-v4-theme, dnd-kit, vitest-pure-logic)
 docs/product-brief.md            # ← TOPIC LAYER: pre-filled (Cyber-Nexus Kanban) → intake skipped
 docs/knowledge/                  # ← TOPIC LAYER: cyber-nexus-spec.md (XS3 screen spec,
                                  #   mock data, gotchas, test plan) + cyber-nexus-color-tokens.md

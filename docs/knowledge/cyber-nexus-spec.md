@@ -83,7 +83,7 @@
 #logic exports <moveTask reorderTask filterTasks nextCode displayCount applyDoneFlag>.
 #logic rule "components import from #logic; ¬business-logic inline in components" !must.
 
-#tests a test-plan; lib vitest; per-skill "skills/vitest-pure-logic.skill.md"; target #logic; ¬dom ¬browser.
+#tests a test-plan; lib vitest; per-skill ".github/skills/vitest-pure-logic.skill.md"; target #logic; ¬dom ¬browser.
 #tc1 a case; verify "moveTask source→target: leaves source, enters target at index".
 #tc2 a case; verify "reorderTask within column keeps others stable".
 #tc3 a case; verify "displayCount = mock count + (live − initial)".

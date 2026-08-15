@@ -26,7 +26,7 @@
 #kb = "docs/knowledge/".
 #code = "src/".
 #demo = "docs/demo-script.md".
-#skills = "skills/".
+#skills = ".github/skills/".
 #skills content skill-files; each has trigger.
 {current-work matches ?s.trigger; ?s member #skills} => {read ?s before that work !must}.
 #any-artifact location repo !must.
@@ -69,8 +69,8 @@
 #testcases ref "verifies US-xx" !must.
 #commit ref US-xx !may.
 
-#ba a agent; file "agents/ba.agent.md"; role BA.
-#dev a agent; file "agents/developer.agent.md"; role Developer.
-#test a agent; file "agents/test.agent.md"; role Test.
+#ba a agent; file ".github/agents/ba.agent.md"; role BA.
+#dev a agent; file ".github/agents/developer.agent.md"; role Developer.
+#test a agent; file ".github/agents/test.agent.md"; role Test.
 
 {session open; ?u say nothing} => {#harness greet; ask "Shall we start?"}.
