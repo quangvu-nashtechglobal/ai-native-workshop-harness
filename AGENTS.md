@@ -25,6 +25,10 @@
 #tokenlog = "docs/token-log.md".
 #kb = "docs/knowledge/".
 #code = "src/".
+#demo = "docs/demo-script.md".
+#skills = "skills/".
+#skills content skill-files; each has trigger.
+{current-work matches ?s.trigger; ?s member #skills} => {read ?s before that work !must}.
 #any-artifact location repo !must.
 [#any-artifact location chat] mark forbidden.
 
@@ -35,7 +39,8 @@
 #p2 action announce; report <current-stage role-lens next-artifact>.
 #p3 action switch-role-agent; per current-stage.
 #p4 action produce next-artifact; then mob-review !must.
-#p5 action remind; items <commit token-log-line request-next>; say-trigger "next-stage" !must.
+#p5 action remind; items <commit token-log-line rotate-driver request-next>; say-trigger "next-stage" !must.
+#p5 rotate-driver "swap keyboard every 30-45min" !may.
 
 #flow a sequence; order <#st1 #st2 #st3 #st4 #st5 #st6>.
 #st1 a stage; name requirements; lead #ba; out #stories.
@@ -43,7 +48,9 @@
 #st3 a stage; name task-breakdown; lead #dev; out #devspec.
 #st4 a stage; name build; lead <#dev #test>; out #code.
 #st5 a stage; name test-pass; lead #test; out <#teststrat #testcases>.
-#st6 a stage; name polish-demo; lead all; out <demo-script #tokenlog>.
+#st6 a stage; name polish-demo; lead all; out <#demo #tokenlog>.
+#demo shape <"0:30 problem+users (from #brief)" "2:00 live-demo happy-path" "1:00 harness+artifacts tour" "1:00 token-story one-number one-optimization" "0:30 learnings">; total "5min" !strictly.
+#demo rule "app already running before slot; driver + narrator assigned; backup screenshots ready" !must.
 
 #loop a procedure; order <spec plan build verify commit>.
 #loop gate "plan reviewed by mob before code" !must.

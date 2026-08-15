@@ -11,9 +11,11 @@ Built to score the rubric's **Harness quality** directly.
 - **Machinery (never changes)** — `AGENTS.md` + `.github/` + `agents/` + `prompts/`:
   the facilitation protocol, stages, working agreements, token discipline, traceability.
   Contains **no project specifics**.
-- **Topic layer (swap to change the product)** — `docs/product-brief.md`: the scope,
-  features, and tech stack of what you're building. Ships as an **empty skeleton**; the
-  harness fills it via an interview at kickoff.
+- **Topic layer (swap to change the product)** — `docs/product-brief.md` + `docs/knowledge/`
+  + `skills/`: the scope, features, tech stack, screen spec, and tech skills of what you're
+  building. **Currently pre-filled with the Cyber-Nexus Kanban topic** (distilled from a
+  verified reference build), so intake is skipped and the harness goes straight to stage 1.
+  To change topic: empty the brief back to placeholders and swap the knowledge/skills files.
 
 ## Contents
 ```
@@ -25,7 +27,11 @@ agents/developer.agent.md        # Dev persona → architecture, dev-spec, code
 agents/test.agent.md             # QC persona  → test strategy/cases + token-log scribe
 prompts/run-workshop.md          # paste-in kickoff prompt (fallback)
 start-workshop.ps1               # CLI launcher: opens Copilot and fires the trigger
-docs/product-brief.md            # ← TOPIC LAYER: empty skeleton, filled by intake
+skills/                          # ← TOPIC LAYER: narrow skills w/ triggers
+                                 #   (tailwind-v4-theme, dnd-kit, vitest-pure-logic)
+docs/product-brief.md            # ← TOPIC LAYER: pre-filled (Cyber-Nexus Kanban) → intake skipped
+docs/knowledge/                  # ← TOPIC LAYER: cyber-nexus-spec.md (XS3 screen spec,
+                                 #   mock data, gotchas, test plan) + cyber-nexus-color-tokens.md
 docs/token-log.md                # token-log seed (method + present-story shape)
 ```
 
